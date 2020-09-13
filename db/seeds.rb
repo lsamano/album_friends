@@ -4,6 +4,10 @@
 User.destroy_all
 Post.destroy_all
 
-User.create(username: "User1", password: "pass")
-User.create(username: "User2", password: "word")
+user1 = User.create(username: "User1", password: "pass")
+user2 = User.create(username: "User2", password: "word")
 User.create(username: "User3", password: "password")
+
+Post.create(user: user1, title: "First!", content: "The first ever post on the platform.")
+Post.create(user: user2, title: "Trying out the platform", content: "My first post.")
+Post.create(user: user2, title: "Update on my activities", content: "My second post. It's been a while - I'm doing good!")
